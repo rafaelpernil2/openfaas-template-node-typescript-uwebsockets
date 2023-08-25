@@ -1,0 +1,22 @@
+{
+  "name": "openfaas-template-node-typescript-uwebsockets",
+  "version": "1.0.0",
+  "description": "A template for Node 18, Typescript and uWebSockets.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no tests specified\" && exit 0",
+    "build": "tsc  --build ./tsconfig.json"
+  },
+  "keywords": [],
+  "author": "rafaelpernil2",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "uWebSockets.js": "github:uNetworking/uWebSockets.js#v20.31.0"
+  },
+  "devDependencies": {
+    "@types/node": "20.5.6",
+    "typescript": "^5.1.6"
+  }
+}

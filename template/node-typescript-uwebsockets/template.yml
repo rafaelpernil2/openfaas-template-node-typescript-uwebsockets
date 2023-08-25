@@ -1,0 +1,5 @@
+language: node-typescript-uwebsockets
+fprocess: node ./dist/index.js
+welcome_message: |
+  You have created a new Node 14 function with Typescript and uWebSockets
+
