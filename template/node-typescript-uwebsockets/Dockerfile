@@ -10,6 +10,10 @@ RUN chmod +x /usr/bin/fwatchdog
 RUN apk --no-cache add curl ca-certificates \
     && addgroup -S app && adduser -S -g app app
 
+# Fix uWebSockets.js compatibility with Alpine Linux
+RUN apk add --no-cache libc6-compat 
+RUN ln -s /lib/libc.musl-x86_64.so.1 /lib/ld-linux-x86-64.so.2
+
 # Turn down the verbosity to default level.
 ENV NPM_CONFIG_LOGLEVEL warn
 
