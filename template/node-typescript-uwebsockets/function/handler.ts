@@ -5,8 +5,9 @@ async function handle(res: HttpResponse, req: HttpRequest): Promise<void> {
 }
 
 function onServerCreated(server: TemplatedApp) {
-  // Add your code
   console.log("onServerCreated");
+  // Add your code
+  server.get("/", handle);
 }
 
 async function onServerListen(server: TemplatedApp) {
