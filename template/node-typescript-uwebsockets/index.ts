@@ -1,6 +1,6 @@
 import { App } from "uWebSockets.js";
 // @ts-ignore
-import { handle, onServerCreated, onServerListen } from "./function/handler";
+import { onServerCreated, onServerListen } from "./function/handler";
 require('dotenv').config({ path: "./function/.env" });
 
 const app = App({});
