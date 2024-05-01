@@ -12,7 +12,9 @@ RUN apk --no-cache add curl ca-certificates \
 
 # Fix uWebSockets.js compatibility with Alpine Linux
 RUN apk add --no-cache libc6-compat 
-RUN ln -s /lib/libc.musl-x86_64.so.1 /lib/ld-linux-x86-64.so.2
+RUN ! test -f /lib/ld-linux-x86-64.so.2 && ln -s /lib/libc.musl-x86_64.so.1 /lib/ld-linux-x86-64.so.2
+RUN ! test -f /lib/ld-linux-armhf.so.3 && ln -s /lib/libc.musl-armhf.so.1 /lib/ld-linux-armhf.so.3
+RUN ! test -f /usr/lib/ld-linux-armhf.so.3 && ln -s /usr/arm-linux-gnueabihf/lib/ld-linux-armhf.so.3 /usr/lib/ld-linux-armhf.so.3
 
 # Turn down the verbosity to default level.
 ENV NPM_CONFIG_LOGLEVEL warn
